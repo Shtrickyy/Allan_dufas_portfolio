@@ -1,3 +1,6 @@
+"use client";
+
+import { CountUp } from "@/components/animations/CountUp";
 import { cn } from "@/lib/utils";
 
 import type { ProofChip as ProofChipType } from "@/types/system";
@@ -8,16 +11,7 @@ type ProofChipProps = {
 };
 
 export function ProofChip({ label, className }: ProofChipProps) {
-  return (
-    <span
-      className={cn(
-        "inline-flex rounded-sm border border-border bg-surface px-2.5 py-1 font-mono text-xs font-medium tracking-widest text-ink-primary uppercase",
-        className,
-      )}
-    >
-      {label}
-    </span>
-  );
+  return <CountUp label={label} className={className} />;
 }
 
 type ProofChipRowProps = {

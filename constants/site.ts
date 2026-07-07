@@ -6,4 +6,5 @@ export const site = {
   linkedInUrl: "https://www.linkedin.com/in/allan-dufas",
   linkedInLabel: "LinkedIn",
   signOff: "Structure before decoration.",
+  cvPath: "/cv/allan-dufas-cv.pdf",
 } as const;

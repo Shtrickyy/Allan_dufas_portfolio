@@ -37,6 +37,31 @@ export type SystemSummary = {
   proofChips: ProofChip[];
 };
 
+export type SystemIndexCard = Pick<
+  System,
+  | "slug"
+  | "title"
+  | "subtitle"
+  | "tagline"
+  | "status"
+  | "stack"
+  | "previewProofChips"
+  | "order"
+>;
+
+export function toSystemIndexCard(system: System): SystemIndexCard {
+  return {
+    slug: system.slug,
+    title: system.title,
+    subtitle: system.subtitle,
+    tagline: system.tagline,
+    status: system.status,
+    stack: system.stack,
+    previewProofChips: system.previewProofChips,
+    order: system.order,
+  };
+}
+
 export function toSystemSummary(system: System): SystemSummary {
   return {
     slug: system.slug,

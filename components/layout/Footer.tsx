@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CvDownloadAction } from "@/components/contact/CvDownloadAction";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { site } from "@/constants/site";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,7 @@ export function Footer() {
           >
             {site.linkedInLabel}
           </Link>
+          <CvDownloadAction />
         </div>
 
         <p className="font-mono text-xs font-medium uppercase tracking-widest text-ink-secondary md:text-right">
