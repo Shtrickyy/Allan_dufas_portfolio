@@ -1,0 +1,46 @@
+{
+  "principles": [
+    {
+      "number": "01",
+      "statement": "Structure before intelligence.",
+      "support": "AI applied to chaos produces eloquent chaos. The data model and workflow structure have to exist before AI adds value — value never comes from simply asking AI to summarize.",
+      "source": "Handover Engine lessons learned."
+    },
+    {
+      "number": "02",
+      "statement": "Decompose, then arbitrate.",
+      "support": "Complex decisions aren't solved by one generalist reasoning over everything at once. Specialize the reasoning into experts, then resolve the conflict deliberately through a final arbitration step.",
+      "source": "Training OS multi-expert architecture."
+    },
+    {
+      "number": "03",
+      "statement": "Explainability is non-negotiable.",
+      "support": "Every output should carry its reasoning. The person should understand the system, not obey it.",
+      "source": "Training OS design principles, Explainability."
+    },
+    {
+      "number": "04",
+      "statement": "Surface what's missing — don't paper over it.",
+      "support": "Incomplete input should be flagged, not silently completed. Honesty about uncertainty is a feature, not a gap to hide.",
+      "source": "Handover Engine — CRM data quality detection."
+    },
+    {
+      "number": "05",
+      "statement": "Optimize for sustainability, not maximum output.",
+      "support": "A system that wins short-term and breaks long-term has failed. The goal is the best decision today, not the most aggressive one.",
+      "source": "Training OS arbiter — maximizes sustainability, not improvements; training should leave enough energy for life."
+    },
+    {
+      "number": "06",
+      "statement": "Augment the decision-maker, don't replace them.",
+      "support": "The goal is a structured starting point for a CSM or an athlete — never a verdict handed down without review.",
+      "source": "Handover Engine architecture principle; Training OS AI limitations — human reviews final programming."
+    },
+    {
+      "number": "07",
+      "statement": "Knowledge should outlive the tool.",
+      "support": "Architecture should survive a model upgrade or a vendor change.",
+      "source": "Training OS — Why Markdown: AI independence, versioning, future migration."
+    }
+  ]
+}

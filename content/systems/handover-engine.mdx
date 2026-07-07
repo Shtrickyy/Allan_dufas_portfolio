@@ -1,0 +1,82 @@
+---
+slug: handover-engine
+title: Handover Engine
+subtitle: AI-Powered Customer Handover Engine
+tagline: From fragmented CRM data to a complete Customer Success workspace in minutes.
+status: Functional prototype
+stack:
+  - n8n
+  - Docker
+  - OpenAI
+  - GPT-4 Mini
+  - Slack
+  - Notion
+liveUrl: null
+repositoryUrl: null
+coverImage: /images/systems/handover-engine/handover-engine-cover.png
+previewProofChips:
+  - label: ~80% reduction
+  - label: Functional prototype
+  - label: Slack + Notion
+gallery:
+  - src: /images/systems/handover-engine/handover-engine-01-slack-globalpharma.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+  - src: /images/systems/handover-engine/handover-engine-02-project-summary.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+  - src: /images/systems/handover-engine/handover-engine-03-executive-summary.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+  - src: /images/systems/handover-engine/handover-engine-04-onboarding-plan.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+  - src: /images/systems/handover-engine/handover-engine-05-workshops.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+  - src: /images/systems/handover-engine/handover-engine-06-quickwins-checklist.png
+    alt: "TODO: caption content pass"
+    caption: "TODO: caption content pass"
+resultsSummary: Estimated reduction of manual onboarding preparation tasks ~80%.
+order: 2
+---
+
+## Problem
+
+Customer Success teams often receive incomplete, inconsistent or poorly structured handovers from Sales. This creates delayed onboarding, missing stakeholder information, undocumented risks, poor adoption planning, inconsistent project governance, and increased implementation risk.
+
+After a deal is closed, the CS team needs to quickly understand who the customer is, what was sold, what the customer expects, who the key stakeholders are, what risks already exist, what information is missing, and what onboarding plan should be prepared.
+
+When this information is fragmented across CRM notes, Slack messages, or sales conversations, onboarding quality depends too much on individual effort.
+
+## Context
+
+The demonstrated case uses a realistic enterprise scenario — GlobalPharma — including a €850k contract, 12 countries, SAP S/4HANA, Microsoft 365, ServiceNow, and a merger with a competitor.
+
+## System
+
+The workflow ingests raw CRM handover data, normalizes and structures information, enriches missing context using AI, detects risks and missing information, generates onboarding recommendations, produces executive summaries, creates project workspaces automatically, and notifies Customer Success teams in Slack.
+
+Pipeline: CRM → normalization → AI enrichment → quality check → risk detection → onboarding generation → executive summary → Slack → Notion.
+
+## Lessons learned
+
+**The input quality defines the output quality.** CRM data is often incomplete or inconsistent. The system needs to detect missing information instead of pretending everything is complete.
+
+**AI is most useful when combined with structure.** The value does not come from asking AI to summarize. It comes from defining the right data model, structuring the workflow, forcing outputs into usable formats, and connecting outputs to operational tools.
+
+**Customer Success automation must remain actionable.** A good CS automation should help the CSM decide what to ask, what to prioritize, what risks to monitor, and what to prepare next.
+
+**The best portfolio projects tell a business story.** The interesting part is the operational transformation: fragmented CRM data → structured handover intelligence → actionable CS workspace.
+
+## Results
+
+The workflow successfully generates Slack customer handover summaries, handover quality analysis, risk detection, onboarding plans, executive summaries, and a Notion project workspace.
+
+Estimated reduction of manual onboarding preparation tasks: ~80%.
+
+Qualitative value includes more consistent handovers, better visibility on risks, faster onboarding readiness, stronger Sales → CS alignment, and better stakeholder preparation.
+
+## Next steps
+
+V2 ideas include CRM integration, a real customer health score model, dashboard view, automated task creation, account segmentation, and alerts for high-risk onboarding.
