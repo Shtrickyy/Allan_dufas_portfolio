@@ -18,12 +18,14 @@ export function HomeSection({
   return (
     <section
       className={cn(
-        "py-16 md:py-24 lg:py-32 xl:py-40",
-        fullBleed ? "bg-background" : undefined,
+        "py-20 md:py-28 lg:py-36 xl:py-44",
+        fullBleed ? "bg-background" : "border-t border-border",
         className,
       )}
     >
-      <PageContainer className={containerClassName}>{children}</PageContainer>
+      <PageContainer className={cn("w-full", containerClassName)}>
+        {children}
+      </PageContainer>
     </section>
   );
 }

@@ -4,6 +4,12 @@ import {
   FadeUpStagger,
 } from "@/components/animations/FadeUp";
 import { HomeSection } from "@/components/sections/HomeSection";
+import {
+  homeSectionHeader,
+  homeSectionLead,
+  homeSectionStack,
+  homeSectionTitle,
+} from "@/components/sections/home-layout";
 import { SectionLabel } from "@/components/system/SectionLabel";
 import { TextLink } from "@/components/system/TextLink";
 
@@ -22,26 +28,24 @@ export function AboutTeaser({
 }: AboutTeaserProps) {
   return (
     <HomeSection>
-      <FadeUpStagger className="max-w-2xl space-y-4">
+      <FadeUpStagger className={`max-w-2xl md:max-w-3xl ${homeSectionStack}`}>
         <FadeUpItem>
-          <SectionLabel>{label}</SectionLabel>
+          <div className={homeSectionHeader}>
+            <SectionLabel>{label}</SectionLabel>
+            <h2 className={homeSectionTitle}>{title}</h2>
+          </div>
         </FadeUpItem>
         <FadeUpItem>
-          <h2 className="text-2xl leading-snug font-medium tracking-tight text-ink-primary md:text-[2rem] md:leading-[1.2]">
-            {title}
-          </h2>
+          <p className={`${homeSectionLead} md:max-w-2xl`}>{teaserLine}</p>
         </FadeUpItem>
         <FadeUpItem>
-          <p className="text-base leading-relaxed text-ink-secondary md:text-lg md:leading-[1.6]">
-            {teaserLine}
-          </p>
-        </FadeUpItem>
-        <FadeUpItem>
-          <TextLink href="/about">Read the full story →</TextLink>
+          <TextLink href="/about" className="inline-flex pt-1">
+            Read the full story →
+          </TextLink>
         </FadeUpItem>
       </FadeUpStagger>
       {photo ? (
-        <FadeUp className="mt-8 max-w-md">
+        <FadeUp className="mt-10 max-w-md md:mt-12">
           <div className="aspect-[4/3] rounded-md border border-border bg-surface" />
         </FadeUp>
       ) : null}

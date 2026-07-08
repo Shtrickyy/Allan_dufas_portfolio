@@ -3,6 +3,13 @@ import Link from "next/link";
 import { FadeUpItem, FadeUpStagger } from "@/components/animations/FadeUp";
 import { InteractiveMediaFrame } from "@/components/animations/InteractiveMediaFrame";
 import { HomeSection } from "@/components/sections/HomeSection";
+import {
+  homeMetaRow,
+  homeSectionHeader,
+  homeSectionLead,
+  homeSectionStack,
+  homeSectionTitle,
+} from "@/components/sections/home-layout";
 import { ProofChipRow } from "@/components/system/ProofChip";
 import { SectionLabel } from "@/components/system/SectionLabel";
 import { ViewSystemLink } from "@/components/system/TextLink";
@@ -19,19 +26,13 @@ export function SystemPreviewSection({
 }: SystemPreviewSectionProps) {
   return (
     <HomeSection>
-      <FadeUpStagger className="space-y-6">
+      <FadeUpStagger className={homeSectionStack}>
         <FadeUpItem>
-          <SectionLabel>{label}</SectionLabel>
-        </FadeUpItem>
-        <FadeUpItem>
-          <h2 className="text-2xl leading-snug font-medium tracking-tight text-ink-primary md:text-[2rem] md:leading-[1.2]">
-            {system.title}
-          </h2>
-        </FadeUpItem>
-        <FadeUpItem>
-          <p className="max-w-3xl text-base leading-relaxed text-ink-secondary md:text-lg md:leading-[1.6]">
-            {system.tagline}
-          </p>
+          <div className={homeSectionHeader}>
+            <SectionLabel>{label}</SectionLabel>
+            <h2 className={homeSectionTitle}>{system.title}</h2>
+            <p className={homeSectionLead}>{system.tagline}</p>
+          </div>
         </FadeUpItem>
         <FadeUpItem>
           <Link
@@ -42,10 +43,10 @@ export function SystemPreviewSection({
           </Link>
         </FadeUpItem>
         <FadeUpItem>
-          <ProofChipRow chips={system.proofChips} />
-        </FadeUpItem>
-        <FadeUpItem>
-          <ViewSystemLink href={system.href} />
+          <div className={homeMetaRow}>
+            <ProofChipRow chips={system.proofChips} />
+            <ViewSystemLink href={system.href} className="shrink-0" />
+          </div>
         </FadeUpItem>
       </FadeUpStagger>
     </HomeSection>

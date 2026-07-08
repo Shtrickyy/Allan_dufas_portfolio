@@ -62,7 +62,7 @@ export function HeroIntro() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-x-0 top-24 mx-auto h-28 max-w-[1200px] opacity-40 md:top-28"
+      className="pointer-events-none absolute inset-x-0 top-28 mx-auto h-28 max-w-[1200px] opacity-30 md:top-32"
     >
       <svg viewBox="0 0 260 90" className="h-full w-full max-w-sm">
         {GRID_POINTS.map((point, index) => {

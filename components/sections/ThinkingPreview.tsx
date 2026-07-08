@@ -4,6 +4,12 @@ import {
   FadeUpStagger,
 } from "@/components/animations/FadeUp";
 import { HomeSection } from "@/components/sections/HomeSection";
+import {
+  homeSectionHeader,
+  homeSectionLead,
+  homeSectionStack,
+  homeSectionTitle,
+} from "@/components/sections/home-layout";
 import { SectionLabel } from "@/components/system/SectionLabel";
 import { ThinkingCard } from "@/components/thinking/ThinkingCard";
 import type { ThinkingSummary } from "@/types/thinking";
@@ -23,21 +29,19 @@ export function ThinkingPreview({
 }: ThinkingPreviewProps) {
   return (
     <HomeSection>
-      <div className="space-y-8">
-        <FadeUpStagger className="space-y-4">
+      <div className={homeSectionStack}>
+        <FadeUpStagger className={homeSectionHeader}>
           <FadeUpItem>
             <SectionLabel>{label}</SectionLabel>
           </FadeUpItem>
           <FadeUpItem>
-            <h2 className="text-2xl leading-snug font-medium tracking-tight text-ink-primary md:text-[2rem] md:leading-[1.2]">
-              {title}
-            </h2>
+            <h2 className={homeSectionTitle}>{title}</h2>
           </FadeUpItem>
         </FadeUpStagger>
 
         {entries.length > 0 ? (
           <FadeUpStagger>
-            <div>
+            <div className="border-t border-border">
               {entries.slice(0, 3).map((entry) => (
                 <FadeUpItem key={entry.slug}>
                   <ThinkingCard entry={entry} />
@@ -47,9 +51,7 @@ export function ThinkingPreview({
           </FadeUpStagger>
         ) : (
           <FadeUp>
-            <p className="max-w-xl text-base leading-relaxed text-ink-secondary">
-              {emptyState}
-            </p>
+            <p className={`max-w-xl ${homeSectionLead}`}>{emptyState}</p>
           </FadeUp>
         )}
       </div>
