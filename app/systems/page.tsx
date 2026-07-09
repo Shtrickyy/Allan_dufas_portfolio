@@ -5,9 +5,8 @@ import { ScaffoldHeading } from "@/components/layout/ScaffoldHeading";
 import { ExperimentGrid } from "@/components/sections/ExperimentGrid";
 import { SystemsIndexGrid } from "@/components/sections/SystemsIndexGrid";
 import { systemsPageCopy } from "@/constants/systems";
-import { getAllExperiments, getAllSystems } from "@/lib/mdx";
+import { getAllExperiments, getSystemIndexCards } from "@/lib/mdx";
 import { toExperimentSummary } from "@/types/experiment";
-import { toSystemIndexCard } from "@/types/system";
 
 export const metadata: Metadata = {
   title: "Systems — Allan Dufas",
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function SystemsPage() {
-  const systems = getAllSystems().map(toSystemIndexCard);
+  const systems = getSystemIndexCards();
   const experiments = getAllExperiments().map(toExperimentSummary);
 
   return (

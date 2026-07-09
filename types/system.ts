@@ -39,7 +39,7 @@ export type SystemSummary = {
   proofChips: ProofChip[];
 };
 
-export type SystemIndexCard = Pick<
+export type SystemIndexCardBase = Pick<
   System,
   | "slug"
   | "title"
@@ -51,7 +51,14 @@ export type SystemIndexCard = Pick<
   | "order"
 >;
 
-export function toSystemIndexCard(system: System): SystemIndexCard {
+export type SystemIndexCard = SystemIndexCardBase & {
+  coverSrc: string;
+  coverWidth: number;
+  coverHeight: number;
+  showCover: boolean;
+};
+
+export function toSystemIndexCard(system: System): SystemIndexCardBase {
   return {
     slug: system.slug,
     title: system.title,

@@ -1,3 +1,4 @@
+import { CoverImage } from "@/components/system/CoverImage";
 import { MetaChip } from "@/components/system/MetaChip";
 import { ProofChipRow } from "@/components/system/ProofChip";
 import { SectionLabel } from "@/components/system/SectionLabel";
@@ -29,6 +30,16 @@ export function SystemHero({ system }: SystemHeroProps) {
       </div>
 
       <p className={caseStudyHeroLead}>{system.tagline}</p>
+
+      <div className="overflow-hidden rounded-md border border-border bg-surface">
+        <CoverImage
+          src={system.coverImage}
+          alt={`${system.title} cover`}
+          title={system.title}
+          className="rounded-none border-0"
+          priority
+        />
+      </div>
 
       <div className={caseStudyMetaBlock}>
         <ProofChipRow chips={system.previewProofChips} />

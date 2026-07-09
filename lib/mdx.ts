@@ -9,9 +9,11 @@ import type { Experiment, ExperimentStage } from "@/types/experiment";
 import { toExperimentSummary } from "@/types/experiment";
 import type { Principle, PrinciplesDocument } from "@/types/principle";
 import type { System } from "@/types/system";
-import { toSystemSummary } from "@/types/system";
+import { toSystemIndexCard, toSystemSummary } from "@/types/system";
 import type { ThinkingArticle } from "@/types/thinking";
 import { toThinkingSummary } from "@/types/thinking";
+
+import { resolveCoverImage } from "@/lib/public-image";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 const SYSTEMS_DIR = path.join(CONTENT_DIR, "systems");
@@ -270,6 +272,13 @@ export function getSystemBySlug(slug: string): System | null {
 
 export function getSystemSummaries() {
   return getAllSystems().map(toSystemSummary);
+}
+
+export function getSystemIndexCards() {
+  return getAllSystems().map((system) => ({
+    ...toSystemIndexCard(system),
+    ...resolveCoverImage(system.coverImage),
+  }));
 }
 
 export function getAllExperiments(): Experiment[] {

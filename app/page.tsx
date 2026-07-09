@@ -39,6 +39,7 @@ export default function Home() {
         <SystemPreviewSection
           system={systemOne}
           label={homeCopy.sectionLabels.systemOne}
+          priority
         />
       ) : null}
       {systemTwo ? (

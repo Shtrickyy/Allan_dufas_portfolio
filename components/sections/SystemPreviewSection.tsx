@@ -13,17 +13,22 @@ import {
 import { ProofChipRow } from "@/components/system/ProofChip";
 import { SectionLabel } from "@/components/system/SectionLabel";
 import { ViewSystemLink } from "@/components/system/TextLink";
+import { resolveCoverImage } from "@/lib/public-image";
 import type { SystemSummary } from "@/types/system";
 
 type SystemPreviewSectionProps = {
   system: SystemSummary;
   label: string;
+  priority?: boolean;
 };
 
 export function SystemPreviewSection({
   system,
   label,
+  priority = false,
 }: SystemPreviewSectionProps) {
+  const cover = resolveCoverImage(system.heroImage);
+
   return (
     <HomeSection>
       <FadeUpStagger className={homeSectionStack}>
@@ -39,7 +44,12 @@ export function SystemPreviewSection({
             href={system.href}
             className="group/link block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
-            <InteractiveMediaFrame title={system.title} />
+            <InteractiveMediaFrame
+              title={system.title}
+              coverAlt={`${system.title} cover`}
+              priority={priority}
+              {...cover}
+            />
           </Link>
         </FadeUpItem>
         <FadeUpItem>

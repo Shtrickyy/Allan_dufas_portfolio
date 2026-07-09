@@ -74,7 +74,12 @@ export function SystemCard(props: SystemCardProps) {
         <CardHoverMotion className="overflow-hidden rounded-md border border-border bg-surface">
           <InteractiveMediaFrame
             title={system.title}
+            coverAlt={`${system.title} cover`}
             className="rounded-none border-0"
+            coverSrc={system.coverSrc}
+            coverWidth={system.coverWidth}
+            coverHeight={system.coverHeight}
+            showCover={system.showCover}
           />
           <div className="space-y-4 p-6">
             <SectionLabel>{label}</SectionLabel>

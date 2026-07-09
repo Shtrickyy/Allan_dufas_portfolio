@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { MediaPlaceholder } from "@/components/system/MediaPlaceholder";
@@ -30,12 +31,26 @@ const SCATTER = [
 type InteractiveMediaFrameProps = {
   title: string;
   className?: string;
+  coverSrc?: string;
+  coverWidth?: number;
+  coverHeight?: number;
+  coverAlt?: string;
+  showCover?: boolean;
+  priority?: boolean;
 };
 
 export function InteractiveMediaFrame({
   title,
   className,
+  coverSrc,
+  coverWidth = 0,
+  coverHeight = 0,
+  coverAlt,
+  showCover = false,
+  priority = false,
 }: InteractiveMediaFrameProps) {
+  const hasCover = showCover && coverSrc && coverWidth > 0 && coverHeight > 0;
+
   return (
     <motion.div
       className={cn("relative block", className)}
@@ -63,7 +78,19 @@ export function InteractiveMediaFrame({
         }}
         className="overflow-hidden rounded-md border"
       >
-        <MediaPlaceholder title={title} className="rounded-none border-0" />
+        {hasCover ? (
+          <Image
+            src={coverSrc}
+            alt={coverAlt ?? `${title} cover`}
+            width={coverWidth}
+            height={coverHeight}
+            priority={priority}
+            className="aspect-[4/3] h-auto w-full bg-background object-cover"
+            sizes="(max-width: 768px) 100vw, 680px"
+          />
+        ) : (
+          <MediaPlaceholder title={title} className="rounded-none border-0" />
+        )}
       </motion.div>
       <motion.svg
         viewBox="0 0 120 72"

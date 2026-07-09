@@ -1,6 +1,3 @@
-import fs from "fs";
-import path from "path";
-
 import Image from "next/image";
 
 import { MediaPlaceholder } from "@/components/system/MediaPlaceholder";
@@ -9,18 +6,13 @@ import {
   caseStudySectionTitle,
 } from "@/components/system/case-study-layout";
 import { SectionLabel } from "@/components/system/SectionLabel";
+import { publicImageExists } from "@/lib/public-image";
 import type { GalleryImage } from "@/types/system";
 
 type SystemGalleryProps = {
   title: string;
   items: GalleryImage[];
 };
-
-function publicImageExists(src: string): boolean {
-  return fs.existsSync(
-    path.join(process.cwd(), "public", src.replace(/^\//, "")),
-  );
-}
 
 type GalleryImageFrameProps = {
   item: GalleryImage;
