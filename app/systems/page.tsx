@@ -18,7 +18,7 @@ export default function SystemsPage() {
   const experiments = getAllExperiments().map(toExperimentSummary);
 
   return (
-    <PageContainer className="pb-16 md:pb-24 lg:pb-32">
+    <PageContainer className="pb-20 md:pb-28 lg:pb-32">
       <ScaffoldHeading
         title={systemsPageCopy.title}
         description={systemsPageCopy.description}

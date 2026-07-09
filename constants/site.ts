@@ -1,6 +1,8 @@
 export const site = {
   name: "Allan Dufas",
   quietLabel: "Decision Systems Architect",
+  description:
+    "Turning fragmented expertise into coherent decision systems — across products, workflows, training and customer operations.",
   email: "allandufas@yahoo.fr",
   emailHref: "mailto:allandufas@yahoo.fr",
   linkedInUrl: "https://www.linkedin.com/in/allan-dufas",

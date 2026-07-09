@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <PageContainer className="pb-16 md:pb-24 lg:pb-32">
+    <PageContainer className="pb-20 md:pb-28 lg:pb-32">
       <ScaffoldHeading
         title={contactCopy.title}
         description={contactCopy.description}

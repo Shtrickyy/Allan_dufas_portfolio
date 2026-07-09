@@ -14,26 +14,35 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
-      <PageContainer className="flex flex-col gap-8 py-16 md:flex-row md:items-center md:justify-between">
-        <p className="max-w-md text-base text-ink-secondary">{site.signOff}</p>
+    <footer className="mt-auto border-t border-border bg-background">
+      <PageContainer className="py-16 md:py-20">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm space-y-3">
+            <p className="text-base leading-relaxed text-ink-secondary">
+              {site.signOff}
+            </p>
+            <p className="font-mono text-xs font-medium tracking-[0.08em] text-ink-secondary uppercase">
+              {site.quietLabel}
+            </p>
+          </div>
 
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
-          <Link href={site.emailHref} className={linkClassName}>
-            {site.email}
-          </Link>
-          <Link
-            href={site.linkedInUrl}
-            className={linkClassName}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {site.linkedInLabel}
-          </Link>
-          <CvDownloadAction />
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+            <Link href={site.emailHref} className={linkClassName}>
+              {site.email}
+            </Link>
+            <Link
+              href={site.linkedInUrl}
+              className={linkClassName}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {site.linkedInLabel}
+            </Link>
+            <CvDownloadAction compact />
+          </div>
         </div>
 
-        <p className="font-mono text-xs font-medium uppercase tracking-widest text-ink-secondary md:text-right">
+        <p className="mt-10 border-t border-border pt-8 font-mono text-xs font-medium tracking-[0.08em] text-ink-secondary uppercase">
           © {year} {site.name}
         </p>
       </PageContainer>

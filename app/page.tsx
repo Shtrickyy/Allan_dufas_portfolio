@@ -8,6 +8,7 @@ import { PatternSection } from "@/components/sections/PatternSection";
 import { SystemPreviewSection } from "@/components/sections/SystemPreviewSection";
 import { ThinkingPreview } from "@/components/sections/ThinkingPreview";
 import { homeCopy } from "@/constants/home";
+import { site } from "@/constants/site";
 import {
   getAllExperiments,
   getAllSystems,
@@ -20,8 +21,7 @@ import { toThinkingSummary } from "@/types/thinking";
 
 export const metadata: Metadata = {
   title: "Allan Dufas — I solve the same problem, every time.",
-  description:
-    "Turning fragmented expertise into coherent decision systems — across products, workflows, training and customer operations.",
+  description: site.description,
 };
 
 export default function Home() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Menu, X } from "lucide-react";
 
 import { MobileNavOverlay } from "@/components/layout/MobileNavOverlay";
@@ -10,10 +10,34 @@ import { isNavActive, navItems } from "@/constants/nav";
 import { site } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
+const SCROLL_THRESHOLD = 40;
+
+function subscribeScroll(onStoreChange: () => void) {
+  window.addEventListener("scroll", onStoreChange, { passive: true });
+  return () => window.removeEventListener("scroll", onStoreChange);
+}
+
+function getScrollSnapshot() {
+  return window.scrollY > SCROLL_THRESHOLD;
+}
+
+function getServerScrollSnapshot() {
+  return false;
+}
+
+function useNavbarScrolled() {
+  return useSyncExternalStore(
+    subscribeScroll,
+    getScrollSnapshot,
+    getServerScrollSnapshot,
+  );
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [openedAtPath, setOpenedAtPath] = useState<string | null>(null);
+  const isScrolled = useNavbarScrolled();
 
   const isMobileMenuOpen = mobileNavOpen && openedAtPath === pathname;
 
@@ -37,7 +61,14 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40">
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-200 ease-out",
+          isScrolled
+            ? "border-b border-border bg-surface/85 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent",
+        )}
+      >
         <nav
           aria-label="Primary"
           className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px] md:px-8 lg:px-12"

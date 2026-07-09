@@ -4,14 +4,11 @@ import { GeistSans } from "geist/font/sans";
 
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { rootMetadata } from "@/lib/site-metadata";
 
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Allan Dufas",
-  description:
-    "Turning fragmented expertise into coherent decision systems — across products, workflows, training and customer operations.",
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
