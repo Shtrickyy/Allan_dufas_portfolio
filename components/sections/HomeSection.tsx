@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { chapterToneClasses } from "@/components/home/narrative-tokens";
 
 export type ChapterSpacing = "tight" | "standard" | "airy";
-export type ChapterTone = "default" | "warm" | "open";
+export type ChapterTone = "default" | "warm" | "open" | "stone" | "paper";
 
 type ChapterProps = {
   children: React.ReactNode;
@@ -18,15 +19,17 @@ type ChapterProps = {
 };
 
 const spacingClasses: Record<ChapterSpacing, string> = {
-  tight: "py-14 md:py-20 lg:py-24",
+  tight: "py-16 md:py-24 lg:py-28",
   standard: "py-20 md:py-28 lg:py-36",
-  airy: "py-24 md:py-32 lg:py-40 xl:py-48",
+  airy: "py-28 md:py-36 lg:py-44 xl:py-52",
 };
 
 const toneClasses: Record<ChapterTone, string> = {
-  default: "bg-background",
-  warm: "bg-[#f0ede6]",
-  open: "bg-background",
+  default: chapterToneClasses.default,
+  warm: chapterToneClasses.warm,
+  open: chapterToneClasses.open,
+  stone: chapterToneClasses.stone,
+  paper: chapterToneClasses.paper,
 };
 
 export function Chapter({
@@ -44,7 +47,7 @@ export function Chapter({
       className={cn(
         spacingClasses[spacing],
         toneClasses[tone],
-        divider && "border-t border-border",
+        divider && "border-t border-[#c8bfb0]/50",
         className,
       )}
     >

@@ -5,6 +5,7 @@ import {
   narrativeCaption,
   narrativePlaceholderLabel,
 } from "@/components/home/narrative-layout";
+import { placeholderGradient } from "@/components/home/narrative-tokens";
 import { publicImageExists } from "@/lib/public-image";
 import { cn } from "@/lib/utils";
 import type { NarrativeImage } from "@/types/home-narrative";
@@ -27,9 +28,14 @@ export function EditorialImage({
     <figure className={cn("w-full", className)}>
       <div
         className={cn(
-          "overflow-hidden rounded-md border border-border",
+          "overflow-hidden",
           aspectClass[image.aspect],
-          hasImage ? "bg-surface" : "bg-surface/80",
+          hasImage
+            ? "rounded-sm border border-[#c8bfb0]/50 bg-surface shadow-[inset_0_0_0_1px_rgba(154,134,104,0.08)]"
+            : cn(
+                placeholderGradient,
+                "rounded-sm border border-[#c8bfb0]/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]",
+              ),
         )}
       >
         {hasImage ? (
@@ -42,15 +48,19 @@ export function EditorialImage({
             sizes={sizes}
           />
         ) : (
-          <div className="flex h-full flex-col justify-end p-4 md:p-5">
-            <p className={narrativePlaceholderLabel}>Photo reserved</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-              {image.alt}
-            </p>
+          <div className="flex h-full flex-col justify-between p-5 md:p-6">
+            <p className={narrativePlaceholderLabel}>Reserved</p>
+            <div className="space-y-2">
+              <p className="font-serif text-sm leading-relaxed text-[#5c4f42]/85 md:text-[0.9375rem]">
+                {image.alt}
+              </p>
+            </div>
           </div>
         )}
       </div>
-      <figcaption className={narrativeCaption}>{image.caption}</figcaption>
+      {image.caption ? (
+        <figcaption className={narrativeCaption}>{image.caption}</figcaption>
+      ) : null}
     </figure>
   );
 }
