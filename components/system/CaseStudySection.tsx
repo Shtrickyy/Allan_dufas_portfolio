@@ -1,4 +1,8 @@
 import { ProseBlock } from "@/components/system/ProseBlock";
+import {
+  caseStudySectionSpacing,
+  caseStudySectionTitle,
+} from "@/components/system/case-study-layout";
 
 type CaseStudySectionProps = {
   title: string;
@@ -11,10 +15,8 @@ export function CaseStudySection({ title, content }: CaseStudySectionProps) {
   }
 
   return (
-    <section className="space-y-4">
-      <h2 className="text-2xl font-medium leading-snug tracking-tight text-ink-primary md:text-[2rem] md:leading-[1.2]">
-        {title}
-      </h2>
+    <section className={caseStudySectionSpacing}>
+      <h2 className={caseStudySectionTitle}>{title}</h2>
       <ProseBlock content={content} />
     </section>
   );

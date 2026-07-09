@@ -1,5 +1,11 @@
 import { MetaChip } from "@/components/system/MetaChip";
+import { ProofChipRow } from "@/components/system/ProofChip";
 import { SectionLabel } from "@/components/system/SectionLabel";
+import {
+  caseStudyHeroLead,
+  caseStudyHeroTitle,
+  caseStudyMetaBlock,
+} from "@/components/system/case-study-layout";
 import { TextLink } from "@/components/system/TextLink";
 import type { System } from "@/types/system";
 
@@ -8,36 +14,47 @@ type SystemHeroProps = {
 };
 
 export function SystemHero({ system }: SystemHeroProps) {
+  const hasLinks = Boolean(system.liveUrl || system.repositoryUrl);
+
   return (
-    <header className="space-y-6 border-b border-border pb-12 md:pb-16">
-      <SectionLabel>Case study</SectionLabel>
+    <header className="space-y-8 md:space-y-10">
       <div className="space-y-3">
-        <h1 className="text-[2rem] font-medium leading-tight tracking-tight text-ink-primary md:text-[3rem]">
-          {system.title}
-        </h1>
-        <p className="font-mono text-xs font-medium tracking-widest text-ink-secondary uppercase">
-          {system.subtitle}
-        </p>
+        <SectionLabel>Case study</SectionLabel>
+        <div className="space-y-2">
+          <h1 className={caseStudyHeroTitle}>{system.title}</h1>
+          <p className="font-mono text-xs font-medium tracking-[0.08em] text-ink-secondary uppercase">
+            {system.subtitle}
+          </p>
+        </div>
       </div>
-      <p className="text-lg leading-relaxed text-ink-secondary md:text-xl md:leading-[1.6]">
-        {system.tagline}
-      </p>
-      <div className="flex flex-wrap items-center gap-2">
-        <MetaChip>{system.status}</MetaChip>
-        {system.stack.map((item) => (
-          <MetaChip key={item}>{item}</MetaChip>
-        ))}
+
+      <p className={caseStudyHeroLead}>{system.tagline}</p>
+
+      <div className={caseStudyMetaBlock}>
+        <ProofChipRow chips={system.previewProofChips} />
+
+        <div className="flex flex-wrap gap-2">
+          <MetaChip>{system.status}</MetaChip>
+          {system.stack.map((item) => (
+            <MetaChip key={item}>{item}</MetaChip>
+          ))}
+        </div>
+
+        {hasLinks ? (
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {system.liveUrl ? (
+              <TextLink href={system.liveUrl} external>
+                View live demo
+              </TextLink>
+            ) : null}
+            {system.repositoryUrl ? (
+              <TextLink href={system.repositoryUrl} external>
+                View repository
+              </TextLink>
+            ) : null}
+          </div>
+        ) : null}
       </div>
-      {system.liveUrl ? (
-        <TextLink href={system.liveUrl} external>
-          View live demo
-        </TextLink>
-      ) : null}
-      {system.repositoryUrl ? (
-        <TextLink href={system.repositoryUrl} external>
-          View repository
-        </TextLink>
-      ) : null}
     </header>
   );
 }

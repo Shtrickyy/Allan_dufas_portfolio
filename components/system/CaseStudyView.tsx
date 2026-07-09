@@ -33,26 +33,31 @@ export function CaseStudyView({ system }: CaseStudyViewProps) {
   const nextSteps = sections["next-steps"] ?? null;
 
   return (
-    <PageContainer className="pb-16 md:pb-24 lg:pb-32">
+    <PageContainer className="pb-20 md:pb-28 lg:pb-32">
       <Link
         href="/systems"
-        className="mb-8 inline-flex text-sm text-ink-secondary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        className="mb-10 inline-flex text-sm leading-none text-ink-secondary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:mb-12"
       >
         ← All systems
       </Link>
 
-      <div className="mx-auto max-w-[680px] space-y-12 md:space-y-16">
-        <SystemHero system={system} />
-        <CaseStudySection title="Problem & context" content={problemContext} />
-        <CaseStudySection title="Architecture" content={architecture} />
-        <CaseStudySection title={designTitle} content={designContent} />
-        <CaseStudySection title="Results & value" content={results} />
-        <CaseStudySection title="Next steps" content={nextSteps} />
-      </div>
+      <article>
+        <div className="mx-auto max-w-[680px]">
+          <SystemHero system={system} />
+          <CaseStudySection
+            title="Problem & context"
+            content={problemContext}
+          />
+          <CaseStudySection title="Architecture" content={architecture} />
+          <CaseStudySection title={designTitle} content={designContent} />
+          <CaseStudySection title="Results & value" content={results} />
+          <CaseStudySection title="Next steps" content={nextSteps} />
+        </div>
 
-      <div className="mt-16 md:mt-24">
-        <SystemGallery title={system.title} items={system.gallery} />
-      </div>
+        <div className="mt-16 border-t border-border pt-16 md:mt-20 md:pt-20">
+          <SystemGallery title={system.title} items={system.gallery} />
+        </div>
+      </article>
     </PageContainer>
   );
 }

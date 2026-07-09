@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 
+import { caseStudySectionBody } from "@/components/system/case-study-layout";
+
 type ProseBlockProps = {
   content: string;
   className?: string;
@@ -25,12 +27,9 @@ export function ProseBlock({ content, className }: ProseBlockProps) {
   const paragraphs = content.split(/\n\n+/).filter(Boolean);
 
   return (
-    <div className={cn("space-y-4", className)}>
+    <div className={cn("space-y-5", className)}>
       {paragraphs.map((paragraph, index) => (
-        <p
-          key={index}
-          className="text-base leading-relaxed text-ink-secondary md:text-[1.0625rem] md:leading-[1.7]"
-        >
+        <p key={index} className={caseStudySectionBody}>
           {formatInline(paragraph.replace(/\n/g, " "))}
         </p>
       ))}

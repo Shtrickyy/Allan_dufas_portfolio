@@ -139,6 +139,8 @@ function parseGallery(
     const src = image.src;
     const alt = image.alt;
     const caption = image.caption;
+    const width = image.width;
+    const height = image.height;
 
     if (typeof src !== "string" || typeof alt !== "string") {
       throw new Error(
@@ -146,10 +148,18 @@ function parseGallery(
       );
     }
 
+    if (typeof width !== "number" || typeof height !== "number") {
+      throw new Error(
+        `Invalid gallery[${index}] in ${filePath}: width and height are required numbers`,
+      );
+    }
+
     return {
       src,
       alt,
       caption: typeof caption === "string" ? caption : "",
+      width,
+      height,
     };
   });
 }
