@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "title": "Allan Dufas — Why does this still take three days?",
+    "description": "A Customer Success operator who builds systems when talented people lose time to problems that should no longer exist."
+  },
+  "chapters": {
+    "one": {
+      "title": "Someone is losing time.",
+      "paragraphs": [
+        "Monday, 9:04. A new enterprise account lands in Customer Success. The CRM has fragments. Slack has threads from people who were in the room. Sales is already chasing the next deal.",
+        "Someone on the CS team has until Wednesday to become an expert on a company they have never met — the stakeholders, the risks, what was actually sold, and what the customer expects when nobody wrote it down the same way twice.",
+        "This is not a technology problem. It is a Monday."
+      ],
+      "image": {
+        "id": "scene-monday",
+        "alt": "Slack channel and whiteboard notes mid-handover — team context, not a staged desk",
+        "caption": "What Monday looks like for most CS teams.",
+        "aspect": "16/9",
+        "src": null
+      }
+    },
+    "two": {
+      "title": "Someone finally notices.",
+      "paragraphs": [
+        "Most people accept this friction. It becomes part of the job — the three days of reconstruction before the real work can begin.",
+        "Someone doesn't. The first question is never \"how do we automate the handover.\" It is: why does a talented person still lose three days to something that should take an hour?",
+        "Allan builds systems when he can't stop noticing problems like this. Not because systems are interesting — because watching people waste time on work that shouldn't exist is unbearable."
+      ],
+      "fragments": [
+        {
+          "text": "\"Why does this problem still exist?\"",
+          "placement": "margin"
+        },
+        {
+          "text": "Loves whiteboards. Loves cafés. Cannot resist a badly designed process.",
+          "placement": "inline"
+        },
+        {
+          "text": "Travels to understand how other cultures solve the same friction.",
+          "placement": "inline"
+        }
+      ],
+      "image": {
+        "id": "noticing",
+        "alt": "Hands gesturing mid-explanation beside a notebook with sketched ideas",
+        "caption": "The question usually arrives before the solution.",
+        "aspect": "4/3",
+        "src": null
+      }
+    },
+    "three": {
+      "title": "The handover that shouldn't take three days.",
+      "bridge": "Same question. Different person.",
+      "story": {
+        "slug": "handover-engine",
+        "href": "/systems/handover-engine",
+        "title": "Handover Engine",
+        "protagonist": "A Customer Success Manager, Monday morning",
+        "paragraphs": [
+          "She needed the stakeholders, the risks, and the customer's expectations — by Wednesday. The data lived in four places. Nobody had written the same brief twice. Onboarding quality depended on how much energy she had left after the detective work.",
+          "Allan built Handover Engine so the handover arrives complete: structured, honest about what's missing, and ready to act on — in minutes, not days.",
+          "It doesn't pretend the CRM is perfect. It flags what's missing. That honesty is the point."
+        ],
+        "honestLine": "The input quality still defines the output. The system detects gaps instead of papering over them.",
+        "linkLabel": "Read how Handover Engine works →",
+        "evidencePosition": "right",
+        "evidence": {
+          "id": "handover-evidence",
+          "alt": "Slack handover delivered to CS with GlobalPharma account context",
+          "caption": "What lands in CS on day one — not a dashboard, a starting point.",
+          "aspect": "16/9",
+          "src": "/images/systems/handover-engine/handover-engine-01-slack-globalpharma.png",
+          "width": 2750,
+          "height": 1632
+        }
+      }
+    },
+    "four": {
+      "title": "The athlete no coach could fully see.",
+      "bridge": "Same shape. Different world.",
+      "story": {
+        "slug": "training-os",
+        "href": "/systems/training-os",
+        "title": "Training OS",
+        "protagonist": "An athlete — Allan — after ten years of training",
+        "paragraphs": [
+          "Knee pain. Ankle mobility. Shoulder instability. Every coach and every program solved part of the problem. Nobody had the complete picture. Generic apps optimise for the average athlete, not for one specific person recovering while still trying to progress.",
+          "The reframing question: what would a world-class coaching staff look like — for one person, with one history, one injury timeline, and one life outside the gym?",
+          "Training OS is a production prototype Allan uses every week. It doesn't replace a coach. It codifies expert reasoning so programming stays coherent when life gets complicated."
+        ],
+        "honestLine": "Still chases a snatch that refuses to cooperate. The system adjusts; perfection was never the goal.",
+        "linkLabel": "Read how Training OS works →",
+        "evidencePosition": "left",
+        "evidence": {
+          "id": "training-context",
+          "alt": "Training environment — barbell, notebook, session notes",
+          "caption": "Built because no single coach could hold the whole picture.",
+          "aspect": "3/4",
+          "src": null
+        }
+      }
+    },
+    "five": {
+      "title": "The life that produces this thinking.",
+      "bridge": "Systems come from somewhere. So do the questions behind them.",
+      "photos": [
+        {
+          "id": "conversation-laugh",
+          "alt": "Laughing mid-conversation — best ideas arrive when nobody is performing",
+          "caption": "Best ideas arrive when nobody's performing.",
+          "aspect": "3/4",
+          "src": null
+        },
+        {
+          "id": "florence-walk",
+          "alt": "Walking through Florence — stone, sunlight, human scale",
+          "caption": "Borrowed from cities that feel inhabited.",
+          "aspect": "16/9",
+          "src": null
+        },
+        {
+          "id": "museum",
+          "alt": "Observing an object in a museum — craftsmanship that outlasts its makers",
+          "caption": "Objects that outlast their makers.",
+          "aspect": "4/3",
+          "src": null
+        },
+        {
+          "id": "cafe-reading",
+          "alt": "Reading in a café — book open, coffee going cold",
+          "caption": "Cold coffee means the conversation was good.",
+          "aspect": "3/4",
+          "src": null
+        },
+        {
+          "id": "weightlifting",
+          "alt": "Weightlifting — show up, adjust, repeat",
+          "caption": "Training teaches the same thing: show up, adjust, repeat.",
+          "aspect": "4/3",
+          "src": null
+        }
+      ],
+      "fragments": [
+        "Kyoto taught patience. Hoi An taught colour.",
+        "Books before bed. Museums before meetings.",
+        "Dances badly. Talks easily with strangers.",
+        "Architecture, craftsmanship, denim, good coffee — coherence matters more than luxury.",
+        "Helps people because he can't not."
+      ]
+    },
+    "six": {
+      "title": "The conversation continues.",
+      "bridge": "Every company has friction nobody has named yet.",
+      "thinkingPrompt": "What would you build if you had one week and no legacy constraints?",
+      "thinkingEmptyLabel": "An open notebook — first notes coming soon.",
+      "links": [
+        {
+          "href": "/about",
+          "label": "Read the full story →"
+        },
+        {
+          "href": "/systems",
+          "label": "See all systems →"
+        },
+        {
+          "href": "/contact",
+          "label": "Start a conversation →"
+        }
+      ]
+    }
+  }
+}
